@@ -1,6 +1,6 @@
 # Software FJ – Sistema Integral de Gestión
 
-Proyecto académico en Python para gestionar clientes, servicios y reservas sin utilizar bases de datos.
+Software FJ es un proyecto académico desarrollado en Python que permite representar la gestión de clientes, servicios y reservas mediante programación orientada a objetos.
 
 ## Archivos
 - `main.py`: ejecución y demostración de 10 operaciones.
