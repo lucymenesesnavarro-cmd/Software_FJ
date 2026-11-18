@@ -1,0 +1,96 @@
+2026-11-18 13:42:35,293 - ERROR - Operación 2: registro inválido de cliente.
+Traceback (most recent call last):
+  File "c:\Users\lucym\Documents\Software_FJ\main.py", line 34, in ejecutar_pruebas
+    Cliente("C002", "Carlos Pérez", "correo-invalido", "3101234567")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucym\Documents\Software_FJ\entidades.py", line 35, in __init__
+    self.correo = correo
+    ^^^^^^^^^^^
+  File "c:\Users\lucym\Documents\Software_FJ\entidades.py", line 63, in correo
+    raise DatoInvalidoError("El correo electrónico no tiene un formato válido.")
+excepciones.DatoInvalidoError: El correo electrónico no tiene un formato válido.
+2026-11-18 13:42:35,301 - ERROR - Operación 6: tarifa inválida.
+Traceback (most recent call last):
+  File "c:\Users\lucym\Documents\Software_FJ\main.py", line 68, in ejecutar_pruebas
+    ReservaSala("S002", "Sala inválida", -1000)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucym\Documents\Software_FJ\servicios.py", line 18, in __init__
+    raise DatoInvalidoError("La tarifa debe ser un número mayor que cero.")
+excepciones.DatoInvalidoError: La tarifa debe ser un número mayor que cero.
+2026-11-18 13:42:35,302 - INFO - Se creó la reserva R-001 para el cliente C001.
+2026-11-18 13:42:35,303 - INFO - Reserva R-001 confirmada. Total: $119000.00
+2026-11-18 13:42:35,303 - INFO - Finalizó el intento de confirmación de R-001.
+2026-11-18 13:42:35,303 - ERROR - Operación 8: duración inválida.
+Traceback (most recent call last):
+  File "c:\Users\lucym\Documents\Software_FJ\main.py", line 85, in ejecutar_pruebas
+    Reserva(cliente1, equipo, 0)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucym\Documents\Software_FJ\reservas.py", line 34, in __init__
+    raise ReservaError("La duración debe ser mayor que cero.")
+excepciones.ReservaError: La duración debe ser mayor que cero.
+2026-11-18 13:42:35,304 - INFO - Se creó la reserva R-002 para el cliente C001.
+2026-11-18 13:42:35,304 - ERROR - No fue posible confirmar la reserva R-002.
+Traceback (most recent call last):
+  File "c:\Users\lucym\Documents\Software_FJ\reservas.py", line 50, in confirmar
+    total = self.servicio.calcular_costo(
+        self.duracion, impuesto, descuento
+    )
+  File "c:\Users\lucym\Documents\Software_FJ\servicios.py", line 90, in calcular_costo
+    return self._calcular_total(cantidad, impuesto, descuento)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucym\Documents\Software_FJ\servicios.py", line 56, in _calcular_total
+    self.validar_disponibilidad()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lucym\Documents\Software_FJ\servicios.py", line 30, in validar_disponibilidad
+    raise ServicioNoDisponibleError(
+        f"El servicio {self.nombre} no está disponible."
+    )
+excepciones.ServicioNoDisponibleError: El servicio Asesoría suspendida no está disponible.
+2026-11-18 13:42:35,305 - INFO - Finalizó el intento de confirmación de R-002.
+2026-11-18 13:42:35,305 - ERROR - Operación 9: intento de reservar servicio no disponible.
+Traceback (most recent call last):
+  File "c:\Users\lucym\Documents\Software_FJ\reservas.py", line 50, in confirmar
+    total = self.servicio.calcular_costo(
+        self.duracion, impuesto, descuento
+    )
+  File "c:\Users\lucym\Documents\Software_FJ\servicios.py", line 90, in calcular_costo
+    return self._calcular_total(cantidad, impuesto, descuento)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucym\Documents\Software_FJ\servicios.py", line 56, in _calcular_total
+    self.validar_disponibilidad()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lucym\Documents\Software_FJ\servicios.py", line 30, in validar_disponibilidad
+    raise ServicioNoDisponibleError(
+        f"El servicio {self.nombre} no está disponible."
+    )
+excepciones.ServicioNoDisponibleError: El servicio Asesoría suspendida no está disponible.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\lucym\Documents\Software_FJ\main.py", line 96, in ejecutar_pruebas
+    reserva_fallida.confirmar()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lucym\Documents\Software_FJ\reservas.py", line 55, in confirmar
+    raise ReservaError(
+        f"Error al confirmar la reserva: {error}"
+    ) from error
+excepciones.ReservaError: Error al confirmar la reserva: El servicio Asesoría suspendida no está disponible.
+2026-11-18 13:42:35,307 - INFO - Reserva R-001 procesada correctamente.
+2026-11-18 13:42:35,307 - ERROR - Error al cancelar la reserva R-001.
+Traceback (most recent call last):
+  File "c:\Users\lucym\Documents\Software_FJ\reservas.py", line 69, in cancelar
+    raise ReservaError(
+        "La reserva no se puede cancelar en su estado actual."
+    )
+excepciones.ReservaError: La reserva no se puede cancelar en su estado actual.
+2026-11-18 13:42:35,308 - ERROR - Operación 10: acción no permitida sobre la reserva.
+Traceback (most recent call last):
+  File "c:\Users\lucym\Documents\Software_FJ\main.py", line 104, in ejecutar_pruebas
+    reserva1.cancelar()
+    ~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lucym\Documents\Software_FJ\reservas.py", line 69, in cancelar
+    raise ReservaError(
+        "La reserva no se puede cancelar en su estado actual."
+    )
+excepciones.ReservaError: La reserva no se puede cancelar en su estado actual.
