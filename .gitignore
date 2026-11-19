@@ -1,6 +1,6 @@
 
 # Registros de ejecución
-logs.txt
+registros.txt
 
 # Archivos temporales de Python
 __pycache__/
