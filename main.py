@@ -79,6 +79,8 @@ def ejecutar_pruebas():
     except ErrorSistema as error:
         logging.exception("No se pudo completar la operación 7.")
         print("\n7. Error controlado:", error)
+    else:
+        print(f"\n7. Reserva {reserva1.codigo} confirmada. Total: ${total:,.2f}")
 
     # Operación 8: comprueba el rechazo de una duración igual a cero.
     try:
@@ -106,7 +108,7 @@ def ejecutar_pruebas():
         logging.exception("Operación 10: acción no permitida sobre la reserva.")
         print("   Error controlado:", error)
     finally:
-        print("\nPruebas finalizadas. Revise logs.txt para consultar los eventos.")
+        print("\nPruebas finalizadas. Revise registros.txt para consultar los eventos.")
 
     print("\nRESUMEN")
     print(f"Clientes registrados: {len(clientes)}")

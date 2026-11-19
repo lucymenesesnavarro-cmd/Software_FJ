@@ -1,19 +1,21 @@
-
-# Registros de ejecución
-registros.txt
-
 # Archivos temporales de Python
 __pycache__/
 *.py[cod]
+*$py.class
 
 # Entornos virtuales
 .venv/
 venv/
+env/
 
-# Configuración del editor
+# Registros generados durante la ejecución
+registros.txt
+*.log
+
+# Configuración local del editor
 .vscode/
+.idea/
 
-# Archivos del sistema
+# Archivos del sistema operativo
 .DS_Store
 Thumbs.db
-

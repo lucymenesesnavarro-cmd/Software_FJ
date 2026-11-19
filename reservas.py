@@ -6,7 +6,7 @@ from excepciones import ErrorSistema, ReservaError
 
 # El archivo de eventos se crea en la carpeta desde la que se ejecuta el programa.
 logging.basicConfig(
-    filename="logs.txt",
+    filename="registros.txt",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     encoding="utf-8",
